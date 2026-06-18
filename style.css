@@ -1,0 +1,272 @@
+body,
+.navbar,
+.project-card,
+.skills-container span,
+.btn,
+.nav-links a,
+.logo,
+.section h2,
+.theme-toggle {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--big-color);
+  color : var(--text-color);
+  line-height: 1.6;
+  
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-color);
+  z-index: 1001;
+}
+
+.logo,
+.section h2{
+  color: var(--accent-color);
+}
+
+.nav-links {
+  list-style: none;
+
+  position: fixed;
+  top: 0;
+  right: -250px;
+
+  width: 250px;
+  height: 100vh;
+
+  background: var(--card-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  padding: 100px 30px;
+
+  transition: right 0.3s ease;
+
+  z-index: 1000;
+}
+
+.nav-links.active {
+  right: 0;
+}
+
+.nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.hero {
+  min-height: 100vh;
+  padding: 100px;
+}
+
+.hero-content {
+  text-align: center;
+  margin-top: 60px;
+}
+
+
+
+.profile-image {
+  width: 200px;
+  height: 250px;
+  border-radius: 30%;
+  object-fit: cover;
+  border: 4px solid #38bdf8;
+  
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+.hero-content p {
+  margin: 20px 0;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent-color);
+  color:  var(--big-color);
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.section {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills-container span,
+.project-card{
+  background: var(--card-color);
+  padding: 10px 20px;
+  border-radius: 20px;
+  
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    transform 0.3s ease;
+}
+.menu-btn {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
+
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --card-color: #1e293b;
+  --accent-color: #38bdf8;
+}
+
+.light-mode {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-color: #e2e8f0;
+  --accent-color: #0284c7;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  background: var(--card-color);
+  color: var(--text-color);
+  font-size: 1.3rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    transform 0.4s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle.rotate {
+  transform: rotate(360deg);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.3s ease;
+
+  z-index: 999;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
